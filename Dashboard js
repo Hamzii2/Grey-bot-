@@ -1,0 +1,52 @@
+// Taste Heavens Dashboard JavaScript
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Display username
+    const username = localStorage.getItem("username");
+
+    const userDisplay = document.getElementById("username");
+
+    if(userDisplay && username){
+        userDisplay.textContent = username;
+    }
+
+
+    // Logout function
+    const logoutBtn = document.getElementById("logout");
+
+    if(logoutBtn){
+
+        logoutBtn.addEventListener("click", () => {
+
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("username");
+
+            alert("Logged out successfully!");
+
+            window.location.href = "login.html";
+
+        });
+
+    }
+
+
+    // Dashboard statistics (example data)
+    const orders = 120;
+    const customers = 85;
+    const revenue = 2500;
+    const menuItems = 35;
+
+
+    const totalOrders = document.getElementById("totalOrders");
+    const totalCustomers = document.getElementById("totalCustomers");
+    const totalRevenue = document.getElementById("totalRevenue");
+    const totalMenu = document.getElementById("totalMenu");
+
+
+    if(totalOrders) totalOrders.textContent = orders;
+    if(totalCustomers) totalCustomers.textContent = customers;
+    if(totalRevenue) totalRevenue.textContent = "$" + revenue;
+    if(totalMenu) totalMenu.textContent = menuItems;
+
+});
