@@ -1,0 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("startBtn");
+
+    button.addEventListener("click", () => {
+        button.textContent = "Loading...";
+        button.disabled = true;
+
+        setTimeout(() => {
+            alert("🚀 Welcome to Grey!\n\nLet's build an amazing WhatsApp bot together.");
+            button.textContent = "Get Started";
+            button.disabled = false;
+        }, 1000);
+    });
+});
